@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { v4 as uuidv4 } from "uuid";
 
 export default function Experience() {
     const [position, setPosition] = useState('');
@@ -48,8 +49,8 @@ export default function Experience() {
                 <h3>{position}</h3>
                 <p>{employer}</p>
                 <ul>
-                    {description.split('\n').map((line, index) => 
-                        <li key={index}>{line}</li>)}
+                    {description.split('\n').map(line => 
+                        <li key={uuidv4()}>{line}</li>)}
                 </ul>
             </div>
         
