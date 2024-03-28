@@ -1,1 +1,6 @@
-// this component handles the experience section
+
+export default function Experience() {
+    return (
+        <h2>Experience</h2>
+    )
+}
