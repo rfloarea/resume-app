@@ -1,1 +1,6 @@
-// this component handles the education section
+
+export default function Education() {
+    return (
+        <h2>Education</h2>
+    )
+}
