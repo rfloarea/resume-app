@@ -1,46 +1,46 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 
+// Common Parent Component
 export const PersonalInformation = () => {
-    const [sharedValue, setSharedValue] = useState('');
+  // Define shared state and update functions
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
 
-    const handleValueChange = (newValue) => {
-        setSharedValue(newValue);
-    }
+  return (
+    <div>
+        <h2>Personal Information</h2>
+        <FirstName firstName={firstName} setFirstName={setFirstName} />
+        <LastName lastName={lastName} setLastName={setLastName} />
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <Form onChange={handleValueChange}/>
-            <Preview value={sharedValue}/>
-        </div>
-    )
-}
+// Component A: Input for First Name
+const FirstName = ({ firstName, setFirstName }) => {
+  const handleChange = (event) => {
+    setFirstName(event.target.value);
+  };
 
-const Form = ({onChange}) => {
-    const [value, setValue] = useState('');
+  return (
+    <div>
+        <label>First Name Input</label>
+        <input type="text" value={firstName} onChange={handleChange} placeholder="First Name" />
+        <p>First Name Display: {firstName}</p>
+    </div>
+  );
+};
 
-    const handleChange = (event) => {
-        const newValue = event.target.value;
-        setValue(newValue);
-        onChange(newValue);
-    }
-    return (
-        <div>
-            <h2>Personal Information</h2>
-            <input 
-                type="text" 
-                value={value} 
-                onChange={handleChange}
-                placeholder="Your name"></input>
-        </div>
-    )
-}
+// Component B: Display First Name and Input for Last Name
+const LastName = ({ lastName, setLastName }) => {
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
 
-const Preview = ({value}) => {
-    return (
-        <div>
-            <h2>Personal Info Preview</h2>
-            <p>Name: {value}</p>
-        </div>
-    )
-}
-
+  return (
+    <div>
+        <label>First Name Input</label>
+        <input type="text" value={lastName} onChange={handleLastNameChange} placeholder="Last Name" />
+        <p>Last Name Display {lastName}</p>
+    </div>
+  );
+};
