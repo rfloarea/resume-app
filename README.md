@@ -7,6 +7,9 @@ A simple way to build a resume.
 - Vite
 - [uuid](https://www.npmjs.com/package/uuid)
 
+## Inspo from
+[eldarlrd's cv-maker project](https://github.com/eldarlrd/cv-maker) and [renchester's cv-generator project](https://github.com/renchester/cv-generator/tree/main)
+
 ## Plog
 Wednesday March 27th 2024 @8:17pm
 
